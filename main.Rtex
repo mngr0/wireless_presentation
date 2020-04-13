@@ -1,0 +1,308 @@
+\documentclass[10pt]{beamer}
+%\usepackage[utf8x]{inputenc}
+\usepackage{hyperref}
+\usepackage{fontawesome}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage{subfig}
+\usepackage{minted}
+% ------------------------------------------------------------------------------
+% Use the beautiful metropolis beamer template
+% ------------------------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome}
+\usepackage{FiraSans} 
+
+\mode<presentation>
+{
+  \usetheme[progressbar=foot,numbering=fraction,background=light]{metropolis}
+  \usecolortheme{default}
+  \usefonttheme{default}  
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+}
+
+
+
+\title{Dynamic Routing in Wireless Mesh Networks}
+\subtitle{The lesson about MANET I wanted to receive}
+\author{Marco Negrini}
+\date{April 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+\begin{frame}{Introduction}
+image of wireless link, asymetrical
+image of wireless network, dynamic
+every node tries to evaluate the link with adjacent nodes which can be:
+percentual of delivered packets (which is quite of a cross layer problem)
+bandwith
+geografical position
+or simply giving every link a weight of 1
+
+\end{frame}
+
+
+\begin{frame}{Introduction}
+Wireless mesh networks are supposed to route packets in a very harsh environment:
+
+\begin{itemize}
+    \item dynamic topology
+    \item no centralized or planned infrastructure
+    \item faulty wireless connections
+    \item asymmetrical link 
+\end{itemize}
+
+%Optimal path between nodes must be recalculated often, and must be stored distributedly.
+
+A mesh protocol must:
+\begin{itemize}
+    \item maintain path
+    \item route packets
+\end{itemize}
+
+\end{frame}
+
+
+
+\section{Packet routing}
+
+\begin{frame}{Packet routing}
+Packet routing can be done in one of this two methodologies 
+
+\begin{itemize}
+    \item maintain path
+    \item route packets
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Packet routing - Link state}
+\begin{figure}
+  \includegraphics[width=250pt]{img/LS_routing.png}
+  \caption{Source Routing.}
+  \label{fig:LS}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Packet routing - Link state Routing I}
+\begin{figure}
+  \includegraphics[width=250pt]{img/LS_routing_msg1.png}
+  \caption{Source Routing.}
+  \label{fig:LSmsg_1}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Packet routing - Link state Routing II}
+\begin{figure}
+  \includegraphics[width=250pt]{img/LS_routing_msg2.png}
+  \caption{Source Routing.}
+  \label{fig:LSmsg_2}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Packet routing - Link state Routing III}
+\begin{figure}
+  \includegraphics[width=250pt]{img/LS_routing_msg3.png}
+  \caption{Source Routing.}
+  \label{fig:LSmsg_3}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Packet routing - Distance Vector}
+\begin{figure}
+  \includegraphics[width=250pt]{img/DV_routing.png}
+  \caption{Table Routing.}
+  \label{fig:DV}
+\end{figure}
+\end{frame}
+
+
+
+\begin{frame}{Packet routing - Distance Vector Routing I}
+\begin{figure}
+  \includegraphics[width=250pt]{img/DV_routing_msg1.png}
+\end{figure}
+%this representation of Table Routing assume a Proactive creation of the tables.
+%The only important thing is that message delivery happens only after table creation.
+%If it was reactive it was necessary to start a table creation before sending the message.
+\end{frame}
+
+\begin{frame}{Packet routing - Distance Vector Routing II}
+\begin{figure}
+  \includegraphics[width=250pt]{img/DV_routing_msg2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Packet routing - Distance Vector Routing III}
+\begin{figure}
+  \includegraphics[width=250pt]{img/DV_routing_msg3.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Packet routing}
+How path is stored in the distributed network determine how routing is processed:
+\begin{itemize}
+    \item \textbf{Source routing} or \textbf{Link state}:  
+        Every Node know the \underline{path} towards every other node.
+        Every node runs the algorithm  to determine the best routes to every other node.
+    \item \textbf{Table Routing} or \textbf{Distance Vector}:
+        Every node knows the \underline{next hop} towards every other node.
+        The Network runs a distributed algorithm called distributed bellman ford.
+\end{itemize}
+\end{frame}
+
+
+
+
+\section{Path Maintenance}
+
+
+
+
+\begin{frame}{Path Maintenance}
+Path calculation can be done following tow possible philosophy:
+\begin{itemize}
+    \item \textbf{Reactive}: No path maintenance. Also known as On-Demand.
+        When a node wants to send a packet it floods the network with a route discovery.
+    \item \textbf{Proactive}: Periodic messages to keep tracks of changes.
+        Every node is always ready to send new messages.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Path Maintenance}
+Path calculation can be done following tow possible philosophy:
+\begin{itemize}
+    \item \textbf{Reactive}: No path maintenance. Also known as On-Demand.
+        When a node wants to send a packet it floods the network with a route discovery.
+    \item \textbf{Proactive}: Periodic messages to keep tracks of changes.
+        Every node is always ready to send new messages.
+\end{itemize}
+\end{frame}
+
+%https://www.open-mesh.org/projects/batman-adv/wiki/Bridge-loop-avoidance
+\begin{frame}{Backbone construction}
+hierarchical vs flat
+
+OLSR has node more important that others, called multipoint relay
+babel is flat
+batman is flat too, but a backbone is created when connecting to the LAN
+\end{frame}
+
+\begin{frame}{Existing Protocols}
+\begin{center}
+\begin{tabular}{ c | c |  c }
+ . & Proactive & Reactive \\ 
+ \hline
+ Table Routing & BATMAN, BABEL, DSDV & AODV \\  
+  \hline
+ Source Routing & OLSR & DSR \\
+\end{tabular}
+\end{center}
+\end{frame}
+
+
+
+\section{Link evaluation}
+
+
+
+
+\begin{frame}{Link quality }
+\begin{figure}
+    \centering
+        \includegraphics[width=5cm]{img/Asymetric.png}
+    \qquad
+        \includegraphics[width=5cm]{img/ReceiveQuality.png} 
+    \label{fig:example1}
+%\end{figure}
+%\begin{figure}
+    \centering
+        \includegraphics[width=5cm]{img/EchoQuality.png} 
+    \qquad
+        \includegraphics[width=5cm]{img/TransmitQuality.png} 
+    \label{fig:example}
+    \caption{referred to A}
+    
+\end{figure}
+\end{frame}
+
+\begin{frame}{Link Quality I}
+\begin{figure}
+  \includegraphics[width=300pt]{img/A-OGM.png}
+  \caption{Data calculated on the A's OGM received from B, and B's rebroadcasts heard by A}
+  \label{fig:calc}
+\end{figure}
+
+TQ = EQ / RQ
+
+This represent BATMAN 4, the fift version is based on bandwith (quantity) to manage also mixed networks.
+\end{frame}
+
+\begin{frame}{BATMAN Proactiveness}
+every node broadcast a Originator Message (OGM) periodically
+OGMs have a Time To Live (TTL), it says the number of hops it will 
+every node bc a OMG with infinite TTL every 13 sec, lower TTLs have higher frequency
+
+how can link quality been measured?
+links are asymmetrical, rx and tx quality are different
+
+receive quality has been measured counting the received OGMs from neighbours.
+Every node knows the frequency of OGM, and by counting can determine the percentage of successful delivery.
+
+TQ  can be measured by counting echos of own OGM
+
+
+
+
+image of echo
+every node calcu
+
+\end{frame}
+
+
+
+
+\begin{frame}{Batman}
+\begin{figure}
+  \includegraphics[width=250pt]{img/A-OGM-multi.png}
+  \caption{Transmit Quality Propagation.}
+  \label{fig:DVdsaf}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}{Routing loop prevention - sequence numbers }
+babel, aodv, DSDV make use of sequence numbers
+
+every route has a number used to indicate if a route is old
+\end{frame}
+
+
+\begin{frame}{Arguments of expansion}
+This presentation is over but there are still lot iof things to say!:
+Sequence numbers, which are used in babel, aodv, DSDV. to determine if a path needs to be recalculated.
+In babed to avoid starvation.
+
+Hierachical networks
+Zigbee and bluetooth have an uneven resource distribution, and there are nodes more important than others.
+OLSR calculates Multi-relay-Point, even if nodes can have similar resources.
+
+Babel and Batman are flat, and there is no backbone constructed.
+At least, until you start talking about gateways to the Internet.
+The 
+
+I have talked very little about loop avoidance.
+Babel make of this a fundamental argument, while batman in his documentation refers to loop avoidance only in LAN backbones.
+
+every route has a number used to indicate if a route is old
+\end{frame}
+
+\end{document}
+
+
+%https://www.open-mesh.org/projects/open-mesh/wiki/The-olsr-story
