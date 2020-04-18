@@ -216,6 +216,12 @@ BATMAN is a mesh protocol
 
 it had a lot of versions
 
+it is Proactive and table driven
+Every node periodically self-announce itself with so-called Originator Messages (OGM)
+OGM are rebroadcasted by neighbours.
+OGM have a Time To Live, a limit to the maximum number of hops that it can travel. 
+
+
 \end{frame}
 
 \begin{frame}{Link quality }
@@ -228,9 +234,9 @@ it had a lot of versions
 %\end{figure}
 %\begin{figure}
     \centering
-        \includegraphics[width=5cm]{img/EchoQuality.png} 
-    \qquad
         \includegraphics[width=5cm]{img/TransmitQuality.png} 
+    \qquad
+        \includegraphics[width=5cm]{img/EchoQuality.png} 
     \label{fig:example}
     \caption{referred to A}
     
