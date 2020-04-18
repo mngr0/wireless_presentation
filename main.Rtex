@@ -12,6 +12,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{fontawesome}
 \usepackage{FiraSans} 
+\usepackage[inline]{enumitem}
 
 \mode<presentation>
 {
@@ -35,16 +36,7 @@
 
 \section{Introduction}
 
-\begin{frame}{Introduction}
-image of wireless link, asymetrical
-image of wireless network, dynamic
-every node tries to evaluate the link with adjacent nodes which can be:
-percentual of delivered packets (which is quite of a cross layer problem)
-bandwith
-geografical position
-or simply giving every link a weight of 1
 
-\end{frame}
 
 
 \begin{frame}{Introduction}
@@ -72,15 +64,22 @@ A mesh protocol must:
 \section{Packet routing}
 
 \begin{frame}{Packet routing}
-Packet routing can be done in one of this two methodologies 
+Packet routing can be done in one of this two methodologies :\\
+Source routing or Table routing
 
-\begin{itemize}
-    \item Source routing
-    \item table routing
-\end{itemize}
+%\begin{itemize}
+%    \item Source routing
+%    \item Table routing
+%\end{itemize}
 
-Let's take a imaginary world with symmetrical links... 
 
+
+Let's take a imaginary world with symmetrical and weighted links
+\begin{figure}
+  \includegraphics[width=250pt]{img/distributed_graph.png}
+  \caption{Distributed network}
+  \label{fig:dg}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Packet routing - Link state}
@@ -163,16 +162,34 @@ How path is stored in the distributed network determine how routing is processed
 
 \section{Path Maintenance}
 
+\begin{frame}{Link Evaluation}
+Path maintenance is the act of giving a weight to links
+%Every node is directly connected to a subset of the nodes of the network.
+%They must decide which link is best, for a given destination.
+
+This weight may be based on:
+\begin{itemize}
+    \item hops distance
+    \item link quality, percentual of delivered packets (which is quite of a cross layer problem)
+    \item link quantity, bandwith
+    \item geografical position
+
+\end{itemize}
+
+\end{frame}
 
 
 
 \begin{frame}{Path Maintenance}
-Path calculation can be done following tow possible philosophy:
+The network is perceived through message flooding, in the form of searches for a specific node, or self-announcement.
+
+Link evaluation can be done following tow possible philosophy:
 \begin{itemize}
-    \item \textbf{Reactive}: No path maintenance. Also known as On-Demand.
-        When a node wants to send a packet it floods the network with a route discovery.
+    \item \textbf{Reactive}:  Also known as On-Demand.
+        When a node wants to send a packet it floods the network for a route discovery.
     \item \textbf{Proactive}: Periodic messages to keep tracks of changes.
-        Every node is always ready to send new messages.
+        Every node is always ready to send new messages. 
+    \item Anything in the middle is considered a hybrid solution
 \end{itemize}
 \end{frame}
 
@@ -190,10 +207,16 @@ Path calculation can be done following tow possible philosophy:
 
 
 
-\section{Link evaluation}
+\section{BATMAN Link evaluation}
 
 
+\begin{frame}{BATMAN }
 
+BATMAN is a mesh protocol
+
+it had a lot of versions
+
+\end{frame}
 
 \begin{frame}{Link quality }
 \begin{figure}
@@ -223,7 +246,7 @@ Path calculation can be done following tow possible philosophy:
 
 TQ = EQ / RQ
 
-This represent BATMAN 4, the fift version is based on bandwith (quantity) to manage also mixed networks.
+This represent BATMAN 4, the fift version is based on bandwith (quantity) to manage mixed networks too.
 \end{frame}
 
 \begin{frame}{BATMAN Proactiveness}
