@@ -75,15 +75,18 @@ A mesh protocol must:
 Packet routing can be done in one of this two methodologies 
 
 \begin{itemize}
-    \item maintain path
-    \item route packets
+    \item Source routing
+    \item table routing
 \end{itemize}
+
+Let's take a imaginary world with symmetrical links... 
+
 \end{frame}
 
 \begin{frame}{Packet routing - Link state}
 \begin{figure}
   \includegraphics[width=250pt]{img/LS_routing.png}
-  \caption{Source Routing.}
+  \caption{Source Routing}
   \label{fig:LS}
 \end{figure}
 \end{frame}
@@ -91,7 +94,7 @@ Packet routing can be done in one of this two methodologies
 \begin{frame}{Packet routing - Link state Routing I}
 \begin{figure}
   \includegraphics[width=250pt]{img/LS_routing_msg1.png}
-  \caption{Source Routing.}
+  \caption{Source Routing}
   \label{fig:LSmsg_1}
 \end{figure}
 \end{frame}
@@ -99,7 +102,7 @@ Packet routing can be done in one of this two methodologies
 \begin{frame}{Packet routing - Link state Routing II}
 \begin{figure}
   \includegraphics[width=250pt]{img/LS_routing_msg2.png}
-  \caption{Source Routing.}
+  \caption{Source Routing}
   \label{fig:LSmsg_2}
 \end{figure}
 \end{frame}
@@ -107,7 +110,7 @@ Packet routing can be done in one of this two methodologies
 \begin{frame}{Packet routing - Link state Routing III}
 \begin{figure}
   \includegraphics[width=250pt]{img/LS_routing_msg3.png}
-  \caption{Source Routing.}
+  \caption{Source Routing}
   \label{fig:LSmsg_3}
 \end{figure}
 \end{frame}
@@ -115,7 +118,7 @@ Packet routing can be done in one of this two methodologies
 \begin{frame}{Packet routing - Distance Vector}
 \begin{figure}
   \includegraphics[width=250pt]{img/DV_routing.png}
-  \caption{Table Routing.}
+  \caption{Table Routing}
   \label{fig:DV}
 \end{figure}
 \end{frame}
@@ -171,26 +174,6 @@ Path calculation can be done following tow possible philosophy:
     \item \textbf{Proactive}: Periodic messages to keep tracks of changes.
         Every node is always ready to send new messages.
 \end{itemize}
-\end{frame}
-
-
-\begin{frame}{Path Maintenance}
-Path calculation can be done following tow possible philosophy:
-\begin{itemize}
-    \item \textbf{Reactive}: No path maintenance. Also known as On-Demand.
-        When a node wants to send a packet it floods the network with a route discovery.
-    \item \textbf{Proactive}: Periodic messages to keep tracks of changes.
-        Every node is always ready to send new messages.
-\end{itemize}
-\end{frame}
-
-%https://www.open-mesh.org/projects/batman-adv/wiki/Bridge-loop-avoidance
-\begin{frame}{Backbone construction}
-hierarchical vs flat
-
-OLSR has node more important that others, called multipoint relay
-babel is flat
-batman is flat too, but a backbone is created when connecting to the LAN
 \end{frame}
 
 \begin{frame}{Existing Protocols}
