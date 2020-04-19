@@ -75,7 +75,8 @@ Packet routing can be done in one of this two methodologies :
 
 Let's take a imaginary world with symmetrical and weighted links
 \begin{figure}
-  \includegraphics[width=250pt]{img/distributed_graph.png}
+  \includegraphics[width=250pt]{img/distributed_graph.pdf}
+  %\includegraphics[width=250pt]{img/distributed_graph.png}
   \caption{Distributed network}
   \label{fig:dg}
 \end{figure}
