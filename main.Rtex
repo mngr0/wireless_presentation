@@ -76,7 +76,7 @@ Packet routing can be done in one of this two methodologies :
 Let's take a imaginary world with symmetrical and weighted links
 \begin{figure}
   \includegraphics[width=250pt]{img/distributed_graph.pdf}
-  %\includegraphics[width=250pt]{img/distributed_graph.png}
+  %\includegraphics[width=250pt]{img/distributed_graph.pdf}
   \caption{Distributed network}
   \label{fig:dg}
 \end{figure}
@@ -84,7 +84,8 @@ Let's take a imaginary world with symmetrical and weighted links
 
 \begin{frame}{Packet routing - Link state}
 \begin{figure}
-  \includegraphics[width=250pt]{img/LS_routing.png}
+  \includegraphics[width=250pt]{img/LS_routing.pdf}
+  %\includegraphics[width=250pt]{img/LS_routing.pdf}
   \caption{Source Routing}
   \label{fig:LS}
 \end{figure}
@@ -92,7 +93,7 @@ Let's take a imaginary world with symmetrical and weighted links
 
 \begin{frame}{Packet routing - Link state Routing I}
 \begin{figure}
-  \includegraphics[width=250pt]{img/LS_routing_msg1.png}
+  \includegraphics[width=250pt]{img/LS_routing_msg1.pdf}
   \caption{Source Routing}
   \label{fig:LSmsg_1}
 \end{figure}
@@ -100,7 +101,7 @@ Let's take a imaginary world with symmetrical and weighted links
 
 \begin{frame}{Packet routing - Link state Routing II}
 \begin{figure}
-  \includegraphics[width=250pt]{img/LS_routing_msg2.png}
+  \includegraphics[width=250pt]{img/LS_routing_msg2.pdf}
   \caption{Source Routing}
   \label{fig:LSmsg_2}
 \end{figure}
@@ -108,7 +109,7 @@ Let's take a imaginary world with symmetrical and weighted links
 
 \begin{frame}{Packet routing - Link state Routing III}
 \begin{figure}
-  \includegraphics[width=250pt]{img/LS_routing_msg3.png}
+  \includegraphics[width=250pt]{img/LS_routing_msg3.pdf}
   \caption{Source Routing}
   \label{fig:LSmsg_3}
 \end{figure}
@@ -116,7 +117,7 @@ Let's take a imaginary world with symmetrical and weighted links
 
 \begin{frame}{Packet routing - Distance Vector}
 \begin{figure}
-  \includegraphics[width=250pt]{img/DV_routing.png}
+  \includegraphics[width=250pt]{img/DV_routing.pdf}
   \caption{Table Routing}
   \label{fig:DV}
 \end{figure}
@@ -126,19 +127,19 @@ Let's take a imaginary world with symmetrical and weighted links
 
 \begin{frame}{Packet routing - Distance Vector Routing I}
 \begin{figure}
-  \includegraphics[width=250pt]{img/DV_routing_msg1.png}
+  \includegraphics[width=250pt]{img/DV_routing_msg1.pdf}
 \end{figure}
 \end{frame}
 
 \begin{frame}{Packet routing - Distance Vector Routing II}
 \begin{figure}
-  \includegraphics[width=250pt]{img/DV_routing_msg2.png}
+  \includegraphics[width=250pt]{img/DV_routing_msg2.pdf}
 \end{figure}
 \end{frame}
 
 \begin{frame}{Packet routing - Distance Vector Routing III}
 \begin{figure}
-  \includegraphics[width=250pt]{img/DV_routing_msg3.png}
+  \includegraphics[width=250pt]{img/DV_routing_msg3.pdf}
 \end{figure}
 \end{frame}
 
@@ -224,16 +225,16 @@ OGM have a Time To Live, a limit to the maximum number of hops that it can trave
 \begin{frame}{Link quality }
 \begin{figure}
     \centering
-        \includegraphics[width=5cm]{img/Asymetric.png}
+        \includegraphics[width=5cm]{img/Asymetric.pdf}
     \qquad
-        \includegraphics[width=5cm]{img/ReceiveQuality.png} 
+        \includegraphics[width=5cm]{img/ReceiveQuality.pdf} 
     \label{fig:example1}
 %\end{figure}
 %\begin{figure}
     \centering
-        \includegraphics[width=5cm]{img/TransmitQuality.png} 
+        \includegraphics[width=5cm]{img/TransmitQuality.pdf} 
     \qquad
-        \includegraphics[width=5cm]{img/EchoQuality.png} 
+        \includegraphics[width=5cm]{img/EchoQuality.pdf} 
     \label{fig:example}
     \caption{referred to A}
     
@@ -242,7 +243,7 @@ OGM have a Time To Live, a limit to the maximum number of hops that it can trave
 
 \begin{frame}{Link Quality I}
 \begin{figure}
-  \includegraphics[width=300pt]{img/A-OGM.png}
+  \includegraphics[width=300pt]{img/A-OGM.pdf}
   \caption{Data calculated on the A's OGM received from B, and B's rebroadcasts heard by A}
   \label{fig:calc}
 \end{figure}
@@ -256,7 +257,7 @@ This represent BATMAN 4, the fifth version is based on bandwidth (quantity) to m
 
 \begin{frame}{Batman}
 \begin{figure}
-  \includegraphics[width=250pt]{img/A-OGM-multi.png}
+  \includegraphics[width=250pt]{img/A-OGM-multi.pdf}
   \caption{Transmit Quality Propagation.}
   \label{fig:DVdsaf}
 \end{figure}
